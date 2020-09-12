@@ -12,7 +12,7 @@ import java.awt.Point;
 public class Block {
 
 	/* -----| INSTANCE VARIABLES |----- */
-	
+
 	/**
 	 * The X position of the block.
 	 */
@@ -31,7 +31,7 @@ public class Block {
 	private boolean isPlaced;
 
 	/* -----| CONSTRUCTOR |----- */
-	
+
 	/**
 	 * Constructs a block
 	 * 
@@ -44,7 +44,7 @@ public class Block {
 		this.yPos = yPos;
 		this.color = color;
 	}
-	
+
 	/* -----| PUBLIC METHODS |----- */
 
 	/**
@@ -56,11 +56,15 @@ public class Block {
 	 *                block can only move down, so negative values are illegal.
 	 */
 	public void moveBlock(int xChange, int yChange) {
-		// If the block hasn't been placed, move the block.
-		if (!isPlaced) {
-			xPos += xChange;
-			yPos += yChange;
-		}
+		xPos += xChange;
+		yPos += yChange;
+	}
+	
+	/**
+	 * Places this block.
+	 */
+	public void place() {
+		this.isPlaced = true;
 	}
 
 	/**
